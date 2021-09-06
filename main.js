@@ -88,7 +88,12 @@
                 case "rectangle":
                     ctx.fillRect(element.x,element.y,element.width,element.height);
                     break;
-                
+                    case "circle":
+                        ctx.beginPath();
+                        ctx.arc(element.x,element.y,element.radius,0,7)
+                        ctx.fill();
+                        ctx.closePath();
+                        break;
             }
         //}
     }
@@ -100,6 +105,7 @@ var board=new Board(800,400);
     
     var canvas=document.getElementById("canvas");
     var board_view=new BoardView(canvas,board);
+    var ball=new Ball(350,100,10,board);
 
     
 
