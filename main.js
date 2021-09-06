@@ -12,10 +12,22 @@
     self.Board.prototype={
         get elements(){
             var elements =this.bars;
-            //elements.push(this.ball);
+            elements.push(this.ball);
             return elements;
         }
         
+    }
+})();
+(function(){
+    self.Ball=function(x,y,radius,board){
+        this.x=x;
+        this.y=y;
+        this.radius=radius;
+        this.speed_y=0;
+        this.speed_x=3;
+        this.board=board;
+        board.ball=this;
+        this.kind="circle"
     }
 })();
 //creacion de la clase Bar o barras
@@ -65,8 +77,9 @@
                 draw(this.ctx,el)
             };
         },
-        
-
+        play:function(){
+            this.clean();
+            this.draw();
         }
     }
     function draw(ctx,element){
