@@ -179,20 +179,20 @@ document.addEventListener("keydown",function(ev){
     //console.log(ev.keyCode);
     //para que no baje la pantella
     
-    if(ev.keyCode==38){
+    if(ev.keyCode==87){
         ev.preventDefault();
         bar.up();
     }
-    else if(ev.keyCode==40){
+    else if(ev.keyCode==83){
         ev.preventDefault();
         bar.down();
     }
-    else if(ev.keyCode==87){
+    else if(ev.keyCode==38){
         ev.preventDefault();
         //tecla W
         bar_2.up();
     }
-    else if(ev.keyCode==83){
+    else if(ev.keyCode==40){
         ev.preventDefault();
         //tela S
         bar_2.down();
