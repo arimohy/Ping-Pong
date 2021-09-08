@@ -208,9 +208,7 @@ document.addEventListener("keydown",function(ev){
 board_view.draw();
 window.requestAnimationFrame(controller);
 
-setTimeout(function(){
-    ball.direction=-1;
-},4000);
+
 function controller(){
     
     board_view.play();
