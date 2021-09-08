@@ -1,3 +1,4 @@
+//
 //creaccion de la clase Board
 (function(){
     self.Board=function(width,height){
@@ -19,6 +20,7 @@
         
     }
 })();
+//clase ball o pelota
 (function(){
     self.Ball=function(x,y,radius,board){
         this.x=x;
@@ -77,10 +79,12 @@
     //metodos
     self.Bar.prototype={
         down:function(){
-            this.y +=this.speed;
+            if(this.y<(this.board.height-this.height))
+                this.y +=this.speed;
         },
         up:function(){
-            this.y -=this.speed;
+            if(this.y>0)
+                this.y -=this.speed;
         },
         toString:function(){
             return "x: "+this.x+"y:"+this.y;
@@ -128,6 +132,10 @@
         }
 
     }
+
+    //
+    //desque aqui son otras funciones auxiliares
+    //
     function hit(a,b){
         //revisa si coliciona a con b
         var hit=false;
@@ -174,7 +182,7 @@ var board=new Board(800,400);
     var ball=new Ball(350,100,10,board);
 
     
-
+//evento cuando apretamos los comandos para mover lasbarras
 document.addEventListener("keydown",function(ev){
     //console.log(ev.keyCode);
     //para que no baje la pantella
@@ -202,13 +210,14 @@ document.addEventListener("keydown",function(ev){
         board.playing=!board.playing;//este es como un switch 
         
     }
+    console.log(bar.toString())
 })
 
 //paraque al inicio dibuje y no se quede en blando
 board_view.draw();
 window.requestAnimationFrame(controller);
 
-
+//para que se repita
 function controller(){
     
     board_view.play();
