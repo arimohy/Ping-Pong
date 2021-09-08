@@ -59,6 +59,17 @@
             if(this.x>(this.board.width/2)) this.direction=-1;
             else this.direction=1
 
+        },
+        //funcion si choca arriba o abajo
+        collisions_board:function(){
+            //inversa de angulo
+            this.speed_y=this.speed*Math.sin(this.bounce_angle);
+            this.speed_x=this.speed*-Math.cos(this.bounce_angle)
+
+            this.direction=Math.random() < 0.5 ? -1 : 1//sentido de la pelota aleatorio
+            
+
+
         }
     }
 })();
@@ -119,12 +130,25 @@
                 }
             };
         },
+        //metodo creado para solucionar choques en el tablero
+        check_collisions_board:function(){
+            //choque arriba del tablero
+            if(this.board.ball.y<=this.board.ball.height || this.board.ball.y>this.board.height-this.board.ball.height){
+                this.board.ball.collisions_board()
+            }
+        },
         play:function(){
             if(this.board.playing){
                 this.clean();
                 this.draw();
                 this.check_collisions();
+                this.check_collisions_board();
                 this.board.ball.move();
+                console.log("======")
+                console.log(this.board.ball.x)
+                console.log(this.board.ball.y)
+                console.log(this.board.ball.bounce_angle)
+                console.log("======")
                 
 
             }
@@ -210,7 +234,7 @@ document.addEventListener("keydown",function(ev){
         board.playing=!board.playing;//este es como un switch 
         
     }
-    console.log(bar.toString())
+    //console.log(bar.toString())
 })
 
 //paraque al inicio dibuje y no se quede en blando
