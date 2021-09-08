@@ -8,15 +8,33 @@
     <style>
         canvas{
             border: solid;
+            align-items: center;
+        }
+        body{
+            margin: 5rem 30rem 5rem 30rem;
+        }
+        h1{
+            text-align: center;
+        }
+        li{
+            font-size: 20px;
+            padding: 5px;
         }
     </style>
 </head>
 <body>
     <!--creacion de titulo-->
-    <h1>Ping Pong por Yhomira </h1>
+    <h1 >Ping Pong por Yhomira </h1>
     <!--etiqueta que crea un lienzo en blando-->
     <canvas id="canvas"></canvas>
     <!--llamando a archivo javascript-->
+    <h3>Instrucciones</h3>
+    <ol>
+        <li>Para iniciar o pausar el Juego presione la tecla de espaciador,vera que la bola empiza a moverse.</li>
+        <li>Para mover la barra derecha presione la tecla W(para subir) y S (para bajar).</li>
+        <li>Para mover la barra izquierda precione la tecla ↑ (para subir) y ↓ (para bajar).</li>
+        <li>Recuerde si la pelota sale del tablero debe reiniciar el juego actualizando la pagina</li>
+    </ol>
     <script src="main.js"></script>
 </body>
 </html>
