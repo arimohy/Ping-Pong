@@ -10,9 +10,9 @@ https://arimohy.github.io/Ping-Pong/
 3. Para mover la barra izquierda precione la tecla W(para subir) y S (para bajar)
 
 ## Reglas
-Se obtine puntos cuando la pelota no rebota con la barra y sale del tablero
-Al obtener el punto la pelota aparecera al medio y se movera de forma aleatoria
-GANA el primer jugador que obtiene 11 puntos DIVIERTANSE!!!
+1. Se obtine puntos cuando la pelota no rebota con la barra y sale del tablero
+2. Al obtener el punto la pelota aparecera al medio y se movera de forma aleatoria
+3. GANA el primer jugador que obtiene 11 puntos ,DIVIERTANSE!!!
 
 
 ## Imagenes 
@@ -33,5 +33,5 @@ Fue interante ver que javascript trabaja todo los objetos como prototipos ,por q
 
 3. ¿El tipo de variables?
 Existen variables como var que son declaras en todo el documento y pueden generar errores ,pero para eso crearon otro tipo de variables como let que solo sobrevive ya sea en la funcion que la crees o ese bloque en que es creado, la varible const que es una varible constante y no la puedes variar(aunque si puedes modificar si es que son arreglos entre otros).
-4.¿DOM?
+4. ¿DOM?
 Me parece muy interezante por que gracias a esto podemos interactuar con el HTML desde javascript aumentar etiquetas entre otras cosas y tambien interactura mediante eventos.
