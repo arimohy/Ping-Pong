@@ -29,13 +29,16 @@
         this.speed_y=0;
         this.speed_x=3;
         this.board=board;
-        this.direction=1;
+        this.direction=Math.random() < 0.5 ? -1 : 1;
         this.bounce_angle=0;
         this.max_bounce_angle=Math.PI/12;
         this.speed=3;
 
         board.ball=this;
         this.kind="circle"
+
+        this.aux_x=x;
+        this.aux_y=y;
     }
     self.Ball.prototype={
         move:function(){
@@ -70,6 +73,16 @@
             
 
 
+        },
+        reiniciar:function(){
+            this.x=this.aux_x;
+            this.y=this.aux_y;
+            this.speed_y=0;
+            this.speed_x=3;
+            this.direction=Math.random() < 0.5 ? -1 : 1;
+            this.bounce_angle=0;
+            this.max_bounce_angle=Math.PI/12;
+            this.speed=3;
         }
     }
 })();
@@ -111,6 +124,11 @@
         this.canvas.height=board.height;
         
         this.ctx=canvas.getContext("2d")
+        this.ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        
+        //
+        this.puntos_a=0;
+        this.puntos_b=0;
     }
     self.BoardView.prototype={
         clean:function(){
@@ -137,18 +155,29 @@
                 this.board.ball.collisions_board()
             }
         },
+        actualizarpuntos:function(){
+            
+            if(this.board.ball.x>this.board.width){
+                this.board.ball.reiniciar()
+                this.puntos_b+=1;
+                console.log(":P")
+            }
+            if(this.board.ball.x<0){
+                this.board.ball.reiniciar()
+                this.puntos_a+=1;
+            }
+        },
         play:function(){
             if(this.board.playing){
                 this.clean();
                 this.draw();
                 this.check_collisions();
                 this.check_collisions_board();
+                this.actualizarpuntos();
                 this.board.ball.move();
-                console.log("======")
-                console.log(this.board.ball.x)
-                console.log(this.board.ball.y)
-                console.log(this.board.ball.bounce_angle)
-                console.log("======")
+                console.log("===")
+                console.log(this.puntos_a)
+                console.log(this.puntos_b)
                 
 
             }
@@ -245,6 +274,19 @@ window.requestAnimationFrame(controller);
 function controller(){
     
     board_view.play();
-    
-    window.requestAnimationFrame(controller);
+    var pa=document.getElementById('puntajea')
+    pa.value=board_view.puntos_a;
+    var pe=document.getElementById('puntajeb')
+    pe.value=board_view.puntos_b;
+
+    if(board_view.puntos_a<11 && board_view.puntos_b<11)
+        window.requestAnimationFrame(controller);
+    else
+        {
+            ganador="A";
+            if(board_view.puntos_b>=11)
+                ganador="B";
+            alert("Juego termino gano el jugador:"+ganador)
+            location.reload();
+        }
 }

@@ -4,37 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Ping Pong</title>
     <style>
         canvas{
             border: solid;
             align-items: center;
+            border-color:rgba(0, 0, 200, 0.5);
         }
         body{
-            margin: 5rem 30rem 5rem 30rem;
+            
         }
-        h1{
+        h1,h3{
             text-align: center;
+            font: oblique bold cursive;
+            color: rgba(0, 0, 200, 0.5);;
         }
         li{
             font-size: 20px;
             padding: 5px;
         }
+        #reglas{
+            padding: 50px;
+        }
+        #container{
+            padding: 70px 0px 50px 0px;
+        }
+        
+        
     </style>
 </head>
 <body>
-    <!--creacion de titulo-->
-    <h1 >Ping Pong por Yhomira </h1>
-    <!--etiqueta que crea un lienzo en blando-->
-    <canvas id="canvas"></canvas>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarRightAlignExample"
+            aria-controls="navbarRightAlignExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+            <!-- Left links -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#container">Jugar</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#reglas">Instruciones y Reglas</a>
+              </li>
+              
+            </ul>
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>>
+    <div class="container mx-auto" id="container">
+        
+
+
+        
+        <h1 >Ping Pong por Yhomira </h1>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Puntaje Jugador A</span>
+            <input id='puntajea'type="number" class="form-control" disabled >
+            <span class="input-group-text">Puntaje Jugador B</span>
+            <input id='puntajeb' type="number" class="form-control" disabled >
+        </div>
+        <!-- Content here -->
+        <div class="row justify-content-center" >
+        <canvas id="canvas"></canvas>
+        </div> 
     <!--llamando a archivo javascript-->
+    <div id="reglas" class="row justify-content-center ">
     <h3>Instrucciones</h3>
-    <ol>
+    <ol >
         <li>Para iniciar o pausar el Juego presione la tecla de espaciador,vera que la bola empiza a moverse.</li>
-        <li>Para mover la barra derecha presione la tecla W(para subir) y S (para bajar).</li>
-        <li>Para mover la barra izquierda precione la tecla ↑ (para subir) y ↓ (para bajar).</li>
-        <li>Recuerde si la pelota sale del tablero debe reiniciar el juego actualizando la pagina</li>
+        <li>Para mover la barra derecha presione la tecla  ↑ (para subir) y ↓ (para bajar)..</li>
+        <li>Para mover la barra izquierda precione la tecla W(para subir) y S (para bajar)</li>
     </ol>
+    <h3>Reglas</h3>
+    <ol >
+        <li>Se obtine puntos cuando la pelota no rebota con la barra y sale del tablero</li>
+        <li>Al obtener el punto la pelota aparecera al medio y se movera de forma aleatoria</li>
+        <li>GANA el primer jugador que obtiene 11 puntos</li>
+        <li>DIVIERTANSE!!!</li>
+    </ol>
+</div>
+      </div>
+    <!--creacion de titulo-->
+
+    
+    <!--etiqueta que crea un lienzo en blando-->
+    
+    
     <script src="main.js"></script>
 </body>
 </html>
