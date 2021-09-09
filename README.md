@@ -19,9 +19,9 @@ GANA el primer jugador que obtiene 11 puntos DIVIERTANSE!!!
 Inicio de Juego
 ![Imagen1](1.png)
 Movimienro de barras y de pelota
-![Imagen2](3.png)
-reglas y instruciones
 ![Imagen2](2.png)
+reglas y instruciones
+![Imagen3](3.png)
 
 ## Sacar una lista de preguntas (que en el instante tu puedas responder) para luego discutirlas.
 
