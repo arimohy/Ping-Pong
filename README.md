@@ -1,6 +1,7 @@
 # Ping-Pong
 Este es un juego guiado por el tutorial de codigo facilito de sus 6 videos de practica MVC y modificado por mi ,espero que sea de su agrado
-
+# github pages
+https://arimohy.github.io/Ping-Pong/
 ## Hola Bienvenidos al juego de ping pong
 
 ## Instrucciones
