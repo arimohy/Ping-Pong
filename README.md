@@ -32,6 +32,8 @@ En Javascript fue interesante ver como tenias que poner ya sea clase ,funcion, e
 Fue interante ver que javascript trabaja todo los objetos como prototipos ,por que aunque declares una clase esta es convertida en prototipo
 
 3. ¿El tipo de variables?
-Existen variables como var que son declaras en todo el documento y pueden generar errores ,pero para eso crearon otro tipo de variables como let que solo sobrevive ya sea en la funcion que la crees o ese bloque en que es creado, la varible const que es una varible constante y no la puedes variar(aunque si puedes modificar si es que son arreglos entre otros).
+Existen variables como var que son declaras en todo el documento(variable globa) y pueden generar errores ,pero para eso crearon otro tipo de variables como let que solo sobrevive ya sea en la funcion que la crees o ese bloque en que es creado, la varible const que es una varible constante y no la puedes variar(aunque si puedes modificar si es que son arreglos entre otros).
 4. ¿DOM?
 Me parece muy interezante por que gracias a esto podemos interactuar con el HTML desde javascript aumentar etiquetas entre otras cosas y tambien interactura mediante eventos.
+5. ¿Qué es JavaScript ?
+JavaScript es un lenguaje de programacion muy usada para correr en navegadores, aunque tambien es utilizado en los servidores median Node.js ,aparte tiene gran nuevo de frameworks como tambien librerias.
